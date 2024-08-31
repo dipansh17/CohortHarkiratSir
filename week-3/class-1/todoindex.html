@@ -1,0 +1,28 @@
+<html>
+
+<body>
+    <input type="text"></input>
+    <button onclick="addTodo()">Add Todo</button>
+</body>
+<script>
+    let ctr = 1;
+    function deleteTodo(index) {
+        console.log("delete krdo");
+        const element = document.getElementById(index);
+        element.parentNode.removeChild(element);
+        //fix this bug
+    }
+    function addTodo() {
+        const inputEle = document.querySelector("input");
+        const value = inputEle.value;
+
+        const newDivEle = document.createElement("div");
+        newDivEle.setAttribute("id", ctr);
+
+        newDivEle.innerHTML = "<div>" + value + "</div><button>Edit</button><button onClick='deleteTodo(' +ctr+ ')'>Delete</button>";
+        document.querySelector("body").appendChild(newDivEle);
+        ctr++;
+    }
+</script>
+
+</html>

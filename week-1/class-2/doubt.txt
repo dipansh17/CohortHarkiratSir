@@ -1,0 +1,10 @@
+1./why not going to 100% is there any security for context switching while doing task some are reserverd of something else
+2. sir but as we know our browser work on c++ so if we think on our browser our code underlying on c++ and dynamically runs js
+
+
+let users = ["manu", "pokkie", "hehe"];
+console.log(users);
+which is better?
+for (let i = 0; i < users.length; i++) console.log(users[i]);
+
+will canVote would be pushed in functions stack like in other language when executed as JS as it is  JIT or something else

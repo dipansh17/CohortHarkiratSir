@@ -1,0 +1,6 @@
+Good afternoon ma'am , my name is Dipansh Malhotra. I recently graduated with a Bachelor of Engineering in Computer Science from Guru Gobind Singh Indraprastha University, where I maintained a CGPA of 9. Throughout my academic journey, I developed a strong foundation in data structures, algorithms, and software engineering principles.
+
+I have practical experience as a Teaching Assistant and Software Developer at CODE HELP, where I honed my ability to communicate complex technical concepts clearly. I have also worked on various projects, such as MEETIFY and CODEARENA, which involved full-stack development using React, Node.js, and Express.js.
+
+Additionally, I am proficient in DevOps practices, including Docker and prometheus, which have enabled me to streamline deployment processes and improve application scalability. 
+I am eager to bring my technical expertise, project experience, and passion for continuous learning to Astrotalk. I am excited about the opportunity to contribute to the  team and grow professionally.

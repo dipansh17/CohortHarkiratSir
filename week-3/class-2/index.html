@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State-Component</title>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <button onclick=" addTodo()">Add Item</button>
+    <button onclick="deleteLastTodo()">Delete Last Todo</button>
+</body>
+<script>
+    let todos = [
+        {
+            id: 1,
+            title: "Go to Gym",
+        }, {
+            id: 2,
+            title: "Go Study",
+        }
+    ];
+    function addTodo() {
+        let counter = todos.length + 1;
+        todos.push({
+            id: counter++, // Comma instead of semicolon
+            title: document.querySelector("input").value,
+        });
+        render(todos)
+    }
+    function deleteLastTodo() {
+        todos.pop();
+        render(todos);
+    }
+    let index = 0;
+    function render(todos) {
+        if (index == todos.length) return;
+        const divEle = document.createElement("div");
+        const h3Ele = document.createElement("h3");
+        const buttonEle = document.createElement("button");
+
+        buttonEle.innerHTML = "delete";
+        // h3Ele.setAttribute(todos[index].id); //some error
+        h3Ele.innerHTML = todos[index].title;
+        index++;
+        divEle.append(h3Ele);
+        divEle.append(buttonEle);
+        document.querySelector("body").appendChild(divEle);
+        render(todos)
+    }
+</script>
+
+</html>
