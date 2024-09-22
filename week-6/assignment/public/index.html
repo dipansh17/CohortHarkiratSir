@@ -6,25 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
 
 <body>
     <div>
+        <div id="auth">
+            <span>signup:</span>
+            <input type="text" id="signup-username" required>
+            <input type="password" id="signup-password" required>
+            <button id="signup-btn" onclick="signup()">Register</button>
+            <br>
+            <span>signin:</span>
+            <input type="text" id="signin-username">
+            <input type="password" id="signin-password">
+            <button id="signin-btn" onclick="signin()">Login</button>
+        </div>
         <div>
             Add todo:
             <input type="text" id="todo-value">
             <button id="create-todo">Add Todo</button>
         </div>
         <div id="todo-list">
-            <div id="todo-item-1">
-                <h2>Review code</h2>
-                <button id="delete-btn">Delete Todo</button>
-                <button id="edit-btn">Edit Todo</button>
-            </div>
 
         </div>
 
     </div>
 
 </body>
+<script src="../index.js"></script>
 
 </html>
