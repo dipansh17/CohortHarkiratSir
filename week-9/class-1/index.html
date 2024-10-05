@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="counter-btn"><button id="btn" onclick="counterHandler()">0</button></div>
+
+
+</body>
+<script>
+    var count = 0;
+    function counterHandler() {
+        const currentCount = document.getElementById("btn").innerHTML;
+        // console.log(currentCount);
+        count = parseInt(currentCount);
+        count++;
+        document.getElementById("btn").innerHTML = count;
+    }
+    //to much code we have to wirte suppose we have to write a facebook like application
+    // we cannot maintain code
+    // used jqurey and backbone js
+</script>
+
+</html>
