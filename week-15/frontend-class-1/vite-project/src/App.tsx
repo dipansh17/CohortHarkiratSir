@@ -16,7 +16,7 @@ function App() {
     ws.onmessage=(ev)=>{
       alert(ev.data)
     }
-  },[])
+  },[]) 
   return (
     <>
       <div className=' border border-yellow-500 px-2 px-4'>

@@ -41,25 +41,60 @@ wss.on("connection",(socket)=>{
     //     }
     // })
     // socket.on("disconnect",()=>{
-    //     allSockets=allSockets.filter(x=>x!=socket);
+    //     allSockets=allSockets.filteer(x=>x!=socket);
     // })
 
+    // socket.on("message",(message)=>{
+    //     // convert string to Object
+    //     const parsedMessage=JSON.parse(message as unknown as string);
+    //     if(parsedMessage.type=="join"){
+    //         allSockets.push({
+    //             socket,
+    //             room:parsedMessage.payload.roomId
+    //         })
+    //     }
+    //     else{
+    //         let currentUserRoom:any=allSockets.find((x)=>x.socket==socket)
+    //         for(let i=0;i<allSockets.length;i++){
+    //             if(allSockets[i].room==currentUserRoom){
+    //                 allSockets[i].socket.send(parsedMessage.payload.message);
+    //             }
+    //         }
+    //     }
+    // })
+    // allSockets.push(socket);
+    // socket.on("message",(message)=>{
+    //     console.log("Message received from: "+message.toString());
+    //     for(let i=0;i<allSockets.length;i++){
+    //         const s=allSockets[i];
+    //         s.send(message.toString()+ ": sent from "+s);
+    //     }
+    // })
+    // socket.on("disconnect",()=>{
+    //     allSockets=allSockets.filter(x=>x!=socket)
+    // })
     socket.on("message",(message)=>{
-        // convert string to Object
         const parsedMessage=JSON.parse(message as unknown as string);
-        if(parsedMessage.type=="join"){
+        if(parsedMessage.type==='join'){
             allSockets.push({
                 socket,
                 room:parsedMessage.payload.roomId
-            })
+            })        
         }
-        else{
-            let currentUserRoom:any=allSockets.find((x)=>x.socket==socket)
+        else if(parsedMessage.type==='chat'){
+            let currUserRoom=null;
             for(let i=0;i<allSockets.length;i++){
-                if(allSockets[i].room==currentUserRoom){
+                if(allSockets[i].socket===socket){
+                    currUserRoom=allSockets[i].room;
+                }
+            }
+            for(let i=0;i<allSockets.length;i++){
+                if(allSockets[i].room===currUserRoom){
                     allSockets[i].socket.send(parsedMessage.payload.message);
                 }
             }
         }
+
     })
+    
 })
